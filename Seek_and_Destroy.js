@@ -19,7 +19,9 @@ function destroyer(arr) {
     newArr = newArr.filter(function(item) {
     return item !== items[i]
 })
-    //console.log(newArr)
+    //
+    
+    console.log(newArr)
   }
     
   
