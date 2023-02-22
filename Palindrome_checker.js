@@ -29,22 +29,20 @@
 
 function palindrome(str) {
  //let pal = str.replace(/_|,|-|\.,/g, "").replace(".","")
-  let pal = (str.replace(/[^a-zA-Z0-9]/g, '')) // to change all characters except numbers and letters
+    let pal = (str.replace(/[^a-zA-Z0-9]/g, '')) // to change all characters except numbers and letters
 
-  console.log(pal)
-   pal = pal.toLowerCase().split(' ')
+    console.log(pal)
+    pal = pal.toLowerCase().split(' ')
   
-  let pal2 = pal.reduce((a,b) => a+b)
+    let pal2 = pal.reduce((a,b) => a+b)
    
 
-  let pal3 = pal2.split("").reverse().join("")
+    let pal3 = pal2.split("").reverse().join("")
   
-  if(pal2 == pal3){
-    return true
-  }else{
-    return false
-  }
-
-    
+    if(pal2 == pal3){
+        return true
+    }else{
+        return false
+    }  
 }
 palindrome("0_0 (: /-\ :) 0-0")
