@@ -23,6 +23,10 @@
 // ?palindrome("0_0 (: /-\ :) 0-0") should return true.
 // palindrome("five|\_/|four") should return false.
 
+
+
+
+
 function palindrome(str) {
  //let pal = str.replace(/_|,|-|\.,/g, "").replace(".","")
   let pal = (str.replace(/[^a-zA-Z0-9]/g, '')) // to change all characters except numbers and letters
