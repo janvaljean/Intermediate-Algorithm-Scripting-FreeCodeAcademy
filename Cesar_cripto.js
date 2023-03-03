@@ -14,39 +14,38 @@ const { join } = require("path")
 // ?rot13("SERR YBIR?") should decode to the string FREE LOVE?
 // ?rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") should decode to the string THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
 
-function asciUpper(asciNum){
-    if (asciNum>90){
-      const more = asciNum % 90
-      const cipNum = 64 + more
-        return (cipNum)
-    }else{
-        return (asciNum)
-    }
-}
-function rot13(str) {
-  const splittedStr = str.split(" ")
-
-  for (let i = 0; i < splittedStr.length; i++) {
-    splittedStr[i] = splittedStr[i]
-    .split("")
-    .map(item =>
-     (65<=item.charCodeAt(0) && item.charCodeAt(0)<=90)
-      ? asciUpper(item.charCodeAt(0)+13) 
-      : item.charCodeAt(0)
-    )
-}
-  const strCode= splittedStr.map((items) => items.map((item) => String.fromCharCode(item)))
-  const strJoinCode = strCode.map((items) => items.join(""))
-  
-  str = strJoinCode.join(" ");
-  console.log(str);
-  
-  return str
-}
-rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")
-rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")
-
-rot13("SERR YBIR?")
+        function rot13(str) {
+            const splittedStr = str.split(" ")
+            for (let i in splittedStr) {
+                splittedStr[i] = splittedStr[i]
+                .split("")
+                .map(item =>
+                    (65<=item.charCodeAt(0) && item.charCodeAt(0)<=90)
+                    ? asciUpper(item.charCodeAt(0)+13) 
+                    : item.charCodeAt(0)
+                    )
+                }
+            const strCode= splittedStr
+            .map((items) => items
+            .map((item) => String.fromCharCode(item)))
+            const strJoinCode = strCode.map((items) => items.join(""))
+            
+            str = strJoinCode.join(" ");
+            return str
+        }
+        function asciUpper(asciNum){
+            if (asciNum>90){
+            const more = asciNum % 90
+            const cipNum = 64 + more
+                return (cipNum)
+            }else{
+                return (asciNum)
+            }
+        }
+        rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")
+        rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")
+        
+        rot13("SERR YBIR?")
 
 rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")
 
